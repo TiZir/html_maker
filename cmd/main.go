@@ -33,7 +33,7 @@ func run() error {
 	})
 
 	// Start server
-	e.Logger.Fatal(e.Start(os.Getenv("HTTP_HOST") + ":" + os.Getenv("HTTP_PORT")))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("HTTP_PORT")))
 	return nil
 }
 
