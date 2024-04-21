@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  main:
+    build:
+      context: ./
+      dockerfile: app.Dockerfile
+    restart: always
+    container_name: main
+    ports:
+      - "8080:8080"
+    environment:
+      - HTTP_HOST=${HOST}
+      - HTTP_PORT=${PORT}
+      - PG_URL=${POSTGRES_URL}
+      - PG_HOST=${POSTGRES_HOST}
+      - PG_PORT=${POSTGRES_PORT}   
+volumes:
+  db_data:
